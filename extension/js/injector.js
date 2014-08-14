@@ -32,7 +32,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
     var testIframeInjection = function(doc) {
         var frame = doc.createElement('iframe');
-        frame.src = fromRemoteOrigin('/frame.html');
+        frame.src = fromRemoteOrigin('/test.html');
         frame.style.top = '0px'
         frame.style.left = '0px'
         frame.style.zIndex = '100'
@@ -42,11 +42,18 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         doc.body.appendChild(frame);
     };
 
+    var testTransitiveInjection = function(doc) {
+        var injectedJs = doc.createElement('script');
+        injectedJs.src = fromRemoteOrigin('/test-transitive.js');
+        doc.getElementsByTagName('head')[0].appendChild(injectedJs);
+    };
+
     var d = window.document;
     testJsInjection(d);
     testSandboxJsInjection(d);
     testCssInjection(d);
     testIframeInjection(d);
+    testTransitiveInjection(d);
 
     console.log('Injection complete');
 });
