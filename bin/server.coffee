@@ -17,8 +17,9 @@ app = http.createServer((req, res) ->
 
   headers = (res, path, stat) ->
     # Most paranoid CSP header
-#    res.setHeader 'Content-Security-Policy', "default-src 'none';"
-#    res.setHeader 'Content-Security-Policy', "default-src 'none'; script-src http://extension.testingcsp.com:6001; frame-src http://extension.testingcsp.com:6001; style-src http://extension.testingcsp.com:6001;"
+    res.setHeader 'Content-Security-Policy', "default-src 'none';"
+    # Whitelist remote domain for script, frame and style
+#    res.setHeader 'Content-Security-Policy', "default-src 'none'; script-src http://assets.someremoteorigin.com:6001; frame-src http://assets.someremoteorigin.com:6001; style-src http://assets.someremoteorigin.com:6001;"
 
   send(req, url.parse(req.url).pathname, { root: rootDir })
     .on 'error', error
