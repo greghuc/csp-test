@@ -7,10 +7,20 @@
 <body>
     <h1>Testing CSP in Chrome</h1>
     <p>I am a locked-down website, with the most stringent CSP policy: "default-src 'none';"</p>
-    <p>Let's test if a Chrome extension can inject script, style and iframe elements.</p>
-    <p class="highlighted">This text should be yellow if injected css loaded properly.</p>
-    <p class="highlighted-transitive">This text should be green if transitive-injected css loaded properly.</p>
-    <p>There should be a 'sidebar' iframe on page left, if injected iframe loaded properly.</p>
-    <p>The word 'HELLO' should be below, if injected js ran properly.</p>
+    <p>Let's test if a Chrome extension can inject remote script, style and iframe elements.</p>
+    <p>Install this project's extension, then click the top-right 'hello' button. Now check for success:</p>
+    <ul>
+        <li>Script injection: next statement will be set 'YES': <span id="jsInjectCheck">NO</span></li>
+        <li>Sandboxed script injection: next statement will be set 'YES': <span id="sandboxJsInjectCheck">NO</span></li>
+        <li>Css injection: next statement will be coloured green: <span class="highlighted">green?</span></li>
+        <li>Iframe injection: will be 'sidebar' iframe on page left</li>
+        <li>For transitive cases, where extension-injected javascript then injects elements itself:
+            <ul>
+                <li>Transitive script injection: next statement will be set 'YES': <span id="jsTransitiveInjectCheck">NO</span></li>
+                <li>Transitive css injection: next statement will be coloured yellow: <span class="highlighted-transitive">yellow?</span></li>
+                <li>Transitive iframe injection: will be 'sidebar' iframe on page right</li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>

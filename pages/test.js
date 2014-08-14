@@ -1,5 +1,2 @@
-var doc = window.document;
-
-var p = doc.createElement('p');
-p.innerHTML = 'I-WAS-INJECTED';
-doc.body.appendChild(p);
+var jsInjectCheck = document.getElementById('jsInjectCheck');
+jsInjectCheck.innerHTML = 'YES';
