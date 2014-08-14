@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "CSP test extension",
-    "description": "This extension tests CSP in Chrome - can script/style/iframe elements be injected into a page?",
+    "description": "This extension tests CSP in Chrome - can remote script/style/iframe elements be injected into a page?",
     "version": "0.1",
     "background": {
         "scripts": ["js/button.js"]
