@@ -2,10 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Testing CSP</title>
+    <title>Testing CS in Chrome</title>
+    <script src="http://localhost:6001/test.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:6001/test.css">
 </head>
 <body>
-    <h1>Testing CSP</h1>
-    <p>I am a locked-down website.</p>
+    <h1>Testing CSP in Chrome</h1>
+    <p>I am a locked-down website, with the most stringent CSP policy: "default-src 'none';"</p>
+    <p>Let's test if a Chrome extension can inject script, style and iframe elements.</p>
+    <p class="highlighted">This text should be yellow if injected css loaded properly.</p>
+    <p>There should be a 'sidebar' iframe on page left, if injected iframe loaded properly.</p>
+    <p>The word 'HELLO' should be below, if injected js ran properly.</p>
 </body>
 </html>
