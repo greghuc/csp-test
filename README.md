@@ -18,7 +18,7 @@ The following cases are tested:
   * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
 * Transitive element injection: the extension injects a remote script, which then itself loads:
   * Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
-  * Remove css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
+  * Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
   * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
   
 ## Results for 2014-08-14
@@ -34,12 +34,18 @@ Both builds showed the same behaviour:
   * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
 * Transitive element injection: the extension injects a remote script, which then itself loads:
   * [FAILURE] Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
-  * [FAILURE] Remove css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
+  * [FAILURE] Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
   * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
   
 So both builds are busted for injection of:
 * remote iframes
 * remote scripts, css and iframes, if loaded transitively by extension-injected remote script
+
+Unsurprisingly, all injection works if the page CSP is relaxed to:
+```
+Content-Security-Policy:default-src 'none'; script-src http://assets.someremoteorigin.com:6001; frame-src http://assets.someremoteorigin.com:6001; style-src http://assets.someremoteorigin.com:6001;
+```
+You can tweak the CSP in bin/server.coffee.
 
 ## Project setup
 
@@ -108,4 +114,5 @@ npm run web-server
 # Click the extension top-right 'Hello' button to initiate remote element injection
 # Review the console for errors, and check if expected changes happened on webpage
 
+# You can tweak the website's CSP in bin/server.coffee
 ```
