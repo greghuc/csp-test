@@ -13,13 +13,13 @@ The Chrome browser can be tested by:
 
 The following cases are tested:
 * Direct element injection from extension:
-  * Remote script: script src="http://assets.someremoteorigin.com:6001/test.js"
-  * Remote css: link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
-  * Remote iframe: iframe src="http://assets.someremoteorigin.com:6001/test.html"
+  * Remote script: <script src="http://assets.someremoteorigin.com:6001/test.js"
+  * Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
+  * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
 * Transitive element injection: the extension injects a remote script, which then itself loads:
-  * Remote script: script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
+  * Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
   * Remove css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
-  * Remote iframe: iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
+  * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
   
 ## Results for 2014-08-14
 
@@ -29,13 +29,13 @@ Chrome was tested for official and canary builds:
 
 Both builds showed the same behaviour:
 * Direct element injection from extension:
-  * [SUCCESS] Remote script: script src="http://assets.someremoteorigin.com:6001/test.js"
-  * [SUCCESS] Remote css: link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
-  * [FAILURE] Remote iframe: iframe src="http://assets.someremoteorigin.com:6001/test.html"
+  * [SUCCESS] Remote script: <script src="http://assets.someremoteorigin.com:6001/test.js"
+  * [SUCCESS] Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
+  * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
 * Transitive element injection: the extension injects a remote script, which then itself loads:
-  * [FAILURE] Remote script: script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
-  * [FAILURE] Remove css: link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
-  * [FAILURE] Remote iframe: iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
+  * [FAILURE] Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
+  * [FAILURE] Remove css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
+  * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
   
 So both builds are busted for injection of:
 * remote iframes
