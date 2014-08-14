@@ -1,0 +1,72 @@
+{
+  "name": "csp-test",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": {
+      "version": "1.7.1",
+      "from": "coffee-script@",
+      "resolved": "https://registry.npmjs.org/coffee-script/-/coffee-script-1.7.1.tgz",
+      "dependencies": {
+        "mkdirp": {
+          "version": "0.3.5",
+          "from": "mkdirp@~0.3.5",
+          "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.3.5.tgz"
+        }
+      }
+    },
+    "send": {
+      "version": "0.8.1",
+      "from": "send@",
+      "resolved": "https://registry.npmjs.org/send/-/send-0.8.1.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "1.0.4",
+          "from": "debug@1.0.4",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-1.0.4.tgz"
+        },
+        "depd": {
+          "version": "0.4.4",
+          "from": "depd@0.4.4",
+          "resolved": "https://registry.npmjs.org/depd/-/depd-0.4.4.tgz"
+        },
+        "escape-html": {
+          "version": "1.0.1",
+          "from": "escape-html@1.0.1",
+          "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.1.tgz"
+        },
+        "finished": {
+          "version": "1.2.2",
+          "from": "finished@1.2.2",
+          "resolved": "https://registry.npmjs.org/finished/-/finished-1.2.2.tgz",
+          "dependencies": {
+            "ee-first": {
+              "version": "1.0.3",
+              "from": "ee-first@1.0.3",
+              "resolved": "https://registry.npmjs.org/ee-first/-/ee-first-1.0.3.tgz"
+            }
+          }
+        },
+        "fresh": {
+          "version": "0.2.2",
+          "from": "fresh@0.2.2",
+          "resolved": "https://registry.npmjs.org/fresh/-/fresh-0.2.2.tgz"
+        },
+        "mime": {
+          "version": "1.2.11",
+          "from": "mime@1.2.11",
+          "resolved": "https://registry.npmjs.org/mime/-/mime-1.2.11.tgz"
+        },
+        "ms": {
+          "version": "0.6.2",
+          "from": "ms@0.6.2",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-0.6.2.tgz"
+        },
+        "range-parser": {
+          "version": "1.0.0",
+          "from": "range-parser@~1.0.0",
+          "resolved": "https://registry.npmjs.org/range-parser/-/range-parser-1.0.0.tgz"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "csp-test",
+  "version": "0.0.1",
+  "description": "CSP-paranoid web-site to test Chrome",
+  "private": true,
+  "engines": {
+    "node": "0.10.29"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "send": "^0.8.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "web-server": "./bin/run-server.sh",
+    "shrinkwrap-all": "npm shrinkwrap --dev"
+  }
+}
