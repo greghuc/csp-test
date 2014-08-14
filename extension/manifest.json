@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+
+    "name": "CSP test extension",
+    "description": "This extension tests CSP in Chrome - can script/style/iframe elements be injected into a page?",
+    "version": "0.1",
+    "background": {
+        "scripts": ["js/button.js"]
+    },
+    "content_scripts": [
+        {
+            "js": [ "js/injector.js" ],
+            "matches": [ "http://*/*", "https://*/*" ]
+        }
+    ],
+
+    "permissions": [
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_icon": "assets/button.png"
+    }
+}
