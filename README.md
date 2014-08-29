@@ -6,36 +6,28 @@ The project consists of:
 * a website with a stringent CSP: default-src 'none';
 * a Chrome extension that injects remote-src elements into the current webpage (on button click). 
 
+Project setup details are below.
+
 The Chrome browser can be tested by:
 * installing the extension
 * opening the project website at: http://localhost:6001
 * clicking the extension button to initiate element injection.
 
-The following cases are tested:
-* Direct element injection from extension:
-  * Remote script: <script src="http://assets.someremoteorigin.com:6001/test.js"
-  * Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
-  * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
-* Transitive element injection: the extension injects a remote script, which then itself loads:
-  * Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
-  * Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
-  * Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
-  
-## Results for 2014-08-14
+## Results for 2014-08-29
 
 Chrome was tested for official and canary builds:
-* Official: 36.0.1985.143
-* Canary: 38.0.2123.0 canary (64-bit)
+* Official: 39.0.2138.3 dev (64-bit)
+* Canary: 39.0.2139.0 canary (64-bit)
 
 Both builds showed the same behaviour:
 * Direct element injection from extension:
   * [SUCCESS] Remote script: <script src="http://assets.someremoteorigin.com:6001/test.js"
   * [SUCCESS] Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/test.css"
-  * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"
+  * __[FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/test.html"__
 * Transitive element injection: the extension injects a remote script, which then itself loads:
-  * [FAILURE] Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"
-  * [FAILURE] Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"
-  * [FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"
+  * __[FAILURE] Remote script: <script src="http://assets.someremoteorigin.com:6001/transitive/test.js"__
+  * __[FAILURE] Remote css: <link rel="stylesheet" href="http://assets.someremoteorigin.com:6001/transitive/test.css"__
+  * __[FAILURE] Remote iframe: <iframe src="http://assets.someremoteorigin.com:6001/transitive/test.html"__
   
 So both builds are busted for injection of:
 * remote iframes
@@ -104,7 +96,7 @@ npm run web-server
 ### Install the Chrome extension 
 ```
 # Open Chrome 'Extensions' menu, then 'Load unpackaged extension'
-# And select extension dir
+# And select extension dir at csp-test/extension
 ```
 
 ## Testing Chrome
